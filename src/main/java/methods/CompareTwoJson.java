@@ -2,7 +2,6 @@ package methods;
 
 import java.io.File;
 import java.io.IOException;
-import org.testng.Assert;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class CompareTwoJson {
@@ -11,8 +10,15 @@ public class CompareTwoJson {
 	
 	public static void main(String []args) 
 	{
-		System.out.println("Comparing two jsons");
-		Assert.assertEquals(compareTwoJsons("jason1.json", "jason2.json"),true,"Json object doesnot matches");
+		
+		if(compareTwoJsons("jason1.json", "jason2.json"))
+		{
+			System.out.println("The given jsons are indentical");
+		}
+		else
+		{
+			System.out.println("The given jsons are not  indentical");
+		}
 	
 		 
 	}
